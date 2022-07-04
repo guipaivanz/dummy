@@ -810,3 +810,11 @@ resource "aws_security_group_rule" "computed_egress_with_self" {
 ################
 # End of egress
 ################
+
+# TEST
+resource "aws_s3_bucket" "foo-bucket" {
+  region        = var.region
+  bucket        = local.bucket_name
+  force_destroy = true
+  acl = "private"
+}
